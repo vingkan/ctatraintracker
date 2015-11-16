@@ -1,0 +1,20 @@
+<Placemark>
+<name>Green Line</name>
+<styleUrl>#LineStyle010</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>SEGMENT_ID</td> <td>86</td> </tr> <tr bgcolor="#D4E4F3"> <td>ASSET_ID</td> <td>21100086</td> </tr> <tr> <td>RAIL LINES</td> <td>Green Line</td> </tr> <tr bgcolor="#D4E4F3"> <td>DESCRIPTION</td> <td>Cicero to Pulaski</td> </tr> <tr> <td>TYPE</td> <td>Elevated or at Grade</td> </tr> <tr bgcolor="#D4E4F3"> <td>LEGEND</td> <td>GR</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<MultiGeometry>
+<LineString>
+<tessellate>1</tessellate>
+<extrude>0</extrude>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>
+-87.725404,41.885412,0.000000 -87.725729,41.885430,0.000000 -87.726246,41.885460,0.000000 -87.726738,41.885488,0.000000 -87.729255,41.885633,0.000000 -87.729944,41.885672,0.000000 -87.731133,41.885740,0.000000 -87.732043,41.885792,0.000000 -87.733114,41.885854,0.000000 -87.733799,41.885893,0.000000 -87.734312,41.885922,0.000000 -87.735585,41.885993,0.000000 -87.738056,41.886132,0.000000 -87.740543,41.886272,0.000000 -87.741298,41.886317,0.000000 -87.742960,41.886416,0.000000 -87.744691,41.886519,0.000000 -87.744698,41.886519,0.000000
+</coordinates>
+</LineString>
+</MultiGeometry>
+</Placemark>

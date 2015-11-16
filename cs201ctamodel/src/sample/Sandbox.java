@@ -12,11 +12,11 @@ public class Sandbox {
 	public static void main(String[] args) throws Exception{
 		
 		Scanner scan = new Scanner(new File("35bronzeiit-placemark.txt"));
-		String key = "NAME";
-		boolean reading = false;
+		/*String key = "NAME";
+		boolean reading = false;*/
 		while(scan.hasNextLine()){
 			String nextLine = scan.nextLine();
-				if(nextLine.length() > 2){
+			/*if(nextLine.length() > 2){
 				if(reading){
 					System.out.println(stripTags(nextLine));
 					reading = false;
@@ -25,8 +25,8 @@ public class Sandbox {
 					//System.out.println(stripTags(nextLine));
 					reading = true;
 				}
-			}
-			//System.out.println(nextLine);
+			}*/
+			System.out.println(nextLine);
 		}
 		scan.close();
 		
