@@ -11,7 +11,7 @@ public class Sandbox {
 
 	public static void main(String[] args) throws Exception{
 		
-		Scanner scan = new Scanner(new File("35bronzeiit-placemark.txt"));
+		Scanner scan = new Scanner(new File("greenline-placemark.txt"));
 		/*String key = "NAME";
 		boolean reading = false;*/
 		while(scan.hasNextLine()){
