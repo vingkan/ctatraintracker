@@ -1,0 +1,15 @@
+<Placemark>
+<name>35-Bronzeville-IIT</name>
+<styleUrl>#IconStyle01</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>STATION ID</td> <td>1120</td> </tr> <tr bgcolor="#D4E4F3"> <td>NAME</td> <td>35-Bronzeville-IIT</td> </tr> <tr> <td>RAIL LINE</td> <td>Green Line</td> </tr> <tr bgcolor="#D4E4F3"> <td>ADDRESS</td> <td>16 E. 35th Street</td> </tr> <tr> <td>ADA</td> <td>ADA Accessible</td> </tr> <tr bgcolor="#D4E4F3"> <td>PARK AND RIDE</td> <td>No</td> </tr> <tr> <td>GTFS</td> <td>41120</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<Point>
+<extrude>0</extrude>
+<altitudeMode>relativeToGround</altitudeMode>
+<coordinates>-87.625881,41.831678,0.000000</coordinates>
+</Point>
+</Placemark>
