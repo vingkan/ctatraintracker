@@ -1,0 +1,80 @@
+<Placemark>
+<name>Brown, Purple (Express), Red</name>
+<styleUrl>#LineStyle00</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>SEGMENT_ID</td> <td>6</td> </tr> <tr bgcolor="#D4E4F3"> <td>ASSET_ID</td> <td>21100006</td> </tr> <tr> <td>RAIL LINES</td> <td>Brown, Purple (Express), Red</td> </tr> <tr bgcolor="#D4E4F3"> <td>DESCRIPTION</td> <td>Clark Junction to Belmont</td> </tr> <tr> <td>TYPE</td> <td>Elevated or at Grade</td> </tr> <tr bgcolor="#D4E4F3"> <td>LEGEND</td> <td>RD</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<MultiGeometry>
+<LineString>
+<tessellate>1</tessellate>
+<extrude>0</extrude>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>
+-87.653454,41.942177,0.000000 -87.653442,41.941852,0.000000 -87.653423,41.941457,0.000000 -87.653397,41.940832,0.000000 -87.653383,41.939914,0.000000 -87.653380,41.939751,0.000000
+</coordinates>
+</LineString>
+</MultiGeometry>
+</Placemark>
+<Placemark>
+<name>Red, Purple Line</name>
+<styleUrl>#LineStyle00</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>SEGMENT_ID</td> <td>23</td> </tr> <tr bgcolor="#D4E4F3"> <td>ASSET_ID</td> <td>21100023</td> </tr> <tr> <td>RAIL LINES</td> <td>Red, Purple Line</td> </tr> <tr bgcolor="#D4E4F3"> <td>DESCRIPTION</td> <td>Berwyn to Argyle</td> </tr> <tr> <td>TYPE</td> <td>Elevated or at Grade</td> </tr> <tr bgcolor="#D4E4F3"> <td>LEGEND</td> <td>RD</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<MultiGeometry>
+<LineString>
+<tessellate>1</tessellate>
+<extrude>0</extrude>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>
+-87.658668,41.977984,0.000000 -87.658588,41.975228,0.000000 -87.658530,41.973453,0.000000
+</coordinates>
+</LineString>
+</MultiGeometry>
+</Placemark>
+<Placemark>
+<name>Red Line</name>
+<styleUrl>#LineStyle00</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>SEGMENT_ID</td> <td>56</td> </tr> <tr bgcolor="#D4E4F3"> <td>ASSET_ID</td> <td>21100056</td> </tr> <tr> <td>RAIL LINES</td> <td>Red Line</td> </tr> <tr bgcolor="#D4E4F3"> <td>DESCRIPTION</td> <td>Lake to Washington</td> </tr> <tr> <td>TYPE</td> <td>Subway</td> </tr> <tr bgcolor="#D4E4F3"> <td>LEGEND</td> <td>RD</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<MultiGeometry>
+<LineString>
+<tessellate>1</tessellate>
+<extrude>0</extrude>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>
+-87.627813,41.884809,0.000000 -87.627748,41.883215,0.000000
+</coordinates>
+</LineString>
+</MultiGeometry>
+</Placemark>
+<Placemark>
+<name>Brown, Purple (Express), Red</name>
+<styleUrl>#LineStyle00</styleUrl>
+<Snippet/>
+<description>
+<![CDATA[
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"> <body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0"> <font face="Arial"> <table border="1" width="300" cellpadding="5" cellspacing="0"> <tr bgcolor="#9CBCE2"> <th width="50&#37;" align="left">Field Name</th> <th width="50&#37;" align="left">Field Value</th> </tr> <tr> <td>SEGMENT_ID</td> <td>7</td> </tr> <tr bgcolor="#D4E4F3"> <td>ASSET_ID</td> <td>21100007</td> </tr> <tr> <td>RAIL LINES</td> <td>Brown, Purple (Express), Red</td> </tr> <tr bgcolor="#D4E4F3"> <td>DESCRIPTION</td> <td>Belmont to Wellington</td> </tr> <tr> <td>TYPE</td> <td>Elevated or at Grade</td> </tr> <tr bgcolor="#D4E4F3"> <td>LEGEND</td> <td>RD</td> </tr> </table> </font> </body> </html>
+]]>
+</description>
+<MultiGeometry>
+<LineString>
+<tessellate>1</tessellate>
+<extrude>0</extrude>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>
+-87.653380,41.939751,0.000000 -87.653375,41.939388,0.000000 -87.653368,41.938929,0.000000 -87.653364,41.938650,0.000000 -87.653326,41.937632,0.000000 -87.653309,41.937170,0.000000 -87.653275,41.936267,0.000000 -87.653266,41.936033,0.000000
+</coordinates>
+</LineString>
+</MultiGeometry>
+</Placemark>
