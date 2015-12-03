@@ -1,14 +1,13 @@
 package main;
 
-public class CTAStop extends Location{
+public class CTAStationRef {
 
 	private int id;
 	private String name;
-	
-	public CTAStop(){
-		super();
-		this.id = 0;
-		this.name = "Blank Stop";
+
+	public CTAStationRef(int id, String name){
+		this.id = id;
+		this.name = name;
 	}
 
 	public int getId() {
