@@ -1,6 +1,6 @@
 package main;
 
-public class GPSLocation {
+public class Location {
 	
 	private String name;
 	private double latitude;
@@ -9,19 +9,19 @@ public class GPSLocation {
 	/*
 	 * Class for GPSLocation on Earth Map
 	 */
-	public GPSLocation(){
+	public Location(){
 		this.name = "Blank Location";
 		this.latitude = 0.000;
 		this.longitude = 0.000;
 	}
 	
-	public GPSLocation(String name, double latitude, double longitude){
+	public Location(String name, double latitude, double longitude){
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 	
-	public GPSLocation(String name, String latitude, String longitude){
+	public Location(String name, String latitude, String longitude){
 		this.name = name;
 		this.latitude = Double.parseDouble(latitude);
 		this.longitude = Double.parseDouble(longitude);
@@ -30,7 +30,7 @@ public class GPSLocation {
 	/*
 	 * Moved degreesToRadians() method to Converter class
 	 */
-	public double calculateDistance(GPSLocation loc){
+	public double calculateDistance(Location loc){
 		/*double x = 69.1 * (loc.getLatitude() - this.getLatitude());
 		double y = 69.1 * (loc.getLongitude() - this.getLongitude()) * Math.cos(this.getLatitude() / 57.3);
 		double distance = Math.sqrt((x * x) + (y * y));
@@ -46,6 +46,7 @@ public class GPSLocation {
 		double distance = EARTH_RADIUS * c; //Value in Kilometers
 		return distance;
 	}
+	
 	/*
 	 * Alternate: double, double calculation method that I don't really want to use
 	 */
@@ -65,7 +66,7 @@ public class GPSLocation {
 		double distance = EARTH_RADIUS * c; //Value in Kilometers
 		return distance;
 	}	
-	public int compareTo(GPSLocation loc){
+	public int compareTo(Location loc){
 		int comparison = 0;
 		return comparison;
 	}
@@ -79,7 +80,7 @@ public class GPSLocation {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		GPSLocation other = (GPSLocation) obj;
+		Location other = (Location) obj;
 		if (Double.doubleToLongBits(latitude) != Double.doubleToLongBits(other.latitude))
 			return false;
 		if (Double.doubleToLongBits(longitude) != Double.doubleToLongBits(other.longitude))
@@ -89,7 +90,7 @@ public class GPSLocation {
 
 	@Override
 	public String toString() {
-		return "GPSLocation: " + name + " at {" + latitude + ", " + longitude + "}";
+		return "Location: " + name + " at {" + latitude + ", " + longitude + "}";
 	}
 
 	public String getName() {
