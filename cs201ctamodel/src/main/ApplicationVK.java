@@ -9,7 +9,7 @@ public class ApplicationVK {
 		
 		CTASystem cta = new CTASystem();
 
-		File file = new File("cta-system-stops-pipes.csv");
+		File file = new File("cta-sample-stops-pipes.csv");
 		try{
 			Scanner scan = new Scanner(file);
 			while(scan.hasNextLine()){
@@ -23,12 +23,9 @@ public class ApplicationVK {
 			System.out.println("Encountered Exception: " + e);
 		}
 		
-		/*for(CTAStop stop : cta.getStops()){
+		for(CTAStop stop : cta.getStops()){
 			System.out.println(stop + "\n");
-		}*/
-
-		System.out.println(cta.searchStopsByName("Adams/Wabash"));
-		System.out.println(cta.searchStopsByName("Tower 12"));
+		}
 		
 		cta.updateMapPoints();
 		cta.displayMap();

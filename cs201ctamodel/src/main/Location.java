@@ -33,7 +33,7 @@ public class Location {
 		this.name = name;
 		Double[] pair = Location.pairToCoordinates(coords);
 		this.latitude = pair[0];
-		this.longitude = pair[0];
+		this.longitude = pair[1];
 	}
 	
 	public Location(String line, int nameIndex, int coordsIndex){
@@ -42,7 +42,7 @@ public class Location {
 		String coords = data[coordsIndex];
 		Double[] pair = Location.pairToCoordinates(coords);
 		this.latitude = pair[0];
-		this.longitude = pair[0];
+		this.longitude = pair[1];
 	}
 	
 	public static Double[] pairToCoordinates(String coords){

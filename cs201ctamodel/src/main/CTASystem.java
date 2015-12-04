@@ -72,8 +72,11 @@ public class CTASystem {
 	}
 
 	public void updateMapPoints(){
+		this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
 		for(CTAStop stop : this.stops){
-			this.map.addPOI(new POI(stop.getPoint(), ""));
+			System.out.println(stop.getLatitude());
+			System.out.println(stop.getLongitude());
+			this.map.addPOI(new POI(new Point(stop.getLatitude(), stop.getLongitude()), "0"));
 		}
 	}
 	
