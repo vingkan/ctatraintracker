@@ -27,6 +27,22 @@ public class Location {
 		this.longitude = Double.parseDouble(longitude);
 	}
 	
+	public Location(String name, String coords){
+		this.name = name;
+		String[] pair = coords.split("\\|");
+		this.latitude = Double.parseDouble(pair[0].replaceAll("[^\\d]", ""));
+		this.longitude = Double.parseDouble(pair[1].replaceAll("[^\\d]", ""));
+	}
+	
+	public Location(String line, int nameIndex, int coordsIndex){
+		String[] data = line.split("\\|");
+		this.name = data[nameIndex];
+		String coords = data[coordsIndex];
+		String[] pair = coords.split(",");
+		this.latitude = Double.parseDouble(pair[0].replaceAll("[^\\d]", ""));
+		this.longitude = Double.parseDouble(pair[1].replaceAll("[^\\d]", ""));
+	}
+	
 	/*
 	 * Moved degreesToRadians() method to Converter class
 	 */

@@ -1,4 +1,3 @@
-STOP_ID,DIRECTION_ID,STOP_NAME,STATION_NAME,STATION_DESCRIPTIVE_NAME,MAP_ID,ADA,RED,BLUE,G,BRN,P,Pexp,Y,Pnk,O,Location
 30213,N,35-Bronzeville-IIT (Harlem-bound),35th-Bronzeville-IIT,35th-Bronzeville-IIT (Green Line),41120,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"(41.831677, -87.625826)"
 30214,S,35-Bronzeville-IIT (63rd-bound),35th-Bronzeville-IIT,35th-Bronzeville-IIT (Green Line),41120,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"(41.831677, -87.625826)"
 30382,S,Cermak-McCormick Place (63rd-bound),Cermak-McCormick Place,Cermak-McCormick Place (Green Line),41690,TRUE,,,TRUE,,,,,,,"(41.853115, -87.626402)"
