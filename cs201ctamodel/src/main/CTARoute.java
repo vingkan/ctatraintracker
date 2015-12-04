@@ -43,6 +43,14 @@ public class CTARoute {
 		return response;
 	}
 
+	public String getTrain() {
+		return train;
+	}
+
+	public void setTrain(String train) {
+		this.train = train;
+	}
+
 	public RouteType getType() {
 		return type;
 	}
