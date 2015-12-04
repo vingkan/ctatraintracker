@@ -26,9 +26,9 @@ public class CTARoute {
 		response += "---------------------------------" + "\n";
 		for(int s = 0; s < this.path.size(); s++){
 			CTAStop stop = this.path.get(s);
-			response += s + ". " + stop.toString();
+			response += s + ". " + stop.toString() + "\n";
 		}
-		response += "\n" + "---------------------------------";
+		response += "---------------------------------";
 		return response;
 	}
 
