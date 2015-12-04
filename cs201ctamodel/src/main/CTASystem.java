@@ -36,6 +36,8 @@ public class CTASystem {
 	/*
 	 * Creates MapWindow with outline of the City of Chicago from the .poly file
 	 * Based on: https://code.google.com/p/minigeo/source/browse/trunk/MiniGeo/src/MinigeoDemo.java
+	 * Generated .poly file at http://polygons.openstreetmap.fr/
+	 * Relation for .poly file: Chicago (122604)
 	 */
 	private static String pattern = "^.*?(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)$";
 	private static Pattern POINT = Pattern.compile(pattern);
