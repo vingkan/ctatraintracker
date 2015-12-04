@@ -54,6 +54,9 @@ public class AdminMenu extends Menu {
 		CTAStop newStop = new CTAStop(name, lat, lon, editRoute.getType());
 		newStop.setID(getSystem().getStops().size() + 100);
 		getSystem().addStop(newStop);
+		/*
+		 * Deprecated: this.setNeedsSort(true);
+		 */
 		
 		LocationComparator nameComparator = new LocationComparator("ALPHABETICAL");
 		Collections.sort(getSystem().getStops(), nameComparator);

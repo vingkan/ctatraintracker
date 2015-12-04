@@ -19,6 +19,16 @@ public class CTAStop extends Location{
 		this.routes = new ArrayList<RouteType>();
 	}
 	
+	/*
+	 * For the purpose of wrapping an ID in a CTAStop object for searching.
+	 */
+	public CTAStop(int stopID){
+		super();
+		this.id = stopID;
+		this.stationID = -1;
+		this.routes = new ArrayList<RouteType>();
+	}
+	
 	public CTAStop(String name, Double lat, Double lon, RouteType type){
 		super(name, lat, lon);
 		this.routes = new ArrayList<RouteType>();

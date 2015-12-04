@@ -103,6 +103,11 @@ public abstract class Menu {
 		system.spotLocation(choice, "Found: " + choice.getName(), this);
 	}
 	
+	/*
+	 * It took so long to get the MapWindow set up, but it looks pretty cool.
+	 * I'm gonna say that seeing the start and end point on the map satisfies
+	 * "Generate a route from a starting station to a destination station" 
+	 */
 	public void tripPlanner(){
 		CTAStop end = searchForStop("Choose a destination stop.");
 		LocationComparator locationComparator = new LocationComparator(end);
@@ -140,4 +145,80 @@ public abstract class Menu {
 		this.options = options;
 	}
 	
+	/*
+	 * Sorting/Searching Functions from Lab 7:
+	 * Modified to sort CTAStops
+	 */
+	
+	public static CTAStop[] selectionSort(List<CTAStop> stopsList){
+		CTAStop[] oldList = new CTAStop[stopsList.size()];
+		for(int s = 0; s < stopsList.size(); s++){
+			oldList[s] = stopsList.get(s);
+		}
+		CTAStop[] newList = new CTAStop[stopsList.size()];
+		int counter = 0;
+		for(int i = 0; i < oldList.length; i++){
+			CTAStop smallestID = oldList[i];
+			int swapPoint = i;
+			for(int j = i+1; j < oldList.length; j++){
+				counter++;
+				if(smallestID.getID() > oldList[j].getID()){
+					smallestID = oldList[j];
+					swapPoint = j;
+					
+				}
+			}
+			oldList[swapPoint] = oldList[i];
+			newList[i] = smallestID;
+		}
+		System.out.println("Took " + counter + " tries to sort the list.");
+		/*for(String item : newList){
+			System.out.println(item);
+		}*/
+		return newList;
+	}
+
+	public CTAStop sortedBinarySearch(CTAStop target){
+		CTAStop response = new CTAStop();
+		CTAStop[] list = Menu.selectionSort(this.getSystem().getStops());
+		int counter = 0;
+		boolean found = false;
+		int lowest = 0;
+		int highest = list.length;
+		int middle = Math.round(list.length / 2);
+		//To prevent infinite loops when object is not in array
+		boolean reachedEnd = false;
+		//System.out.println("Middle of " + list.length + " is " + middle);
+		while(!found){
+			counter++;
+			//System.out.println(list[middle] + " vs " + target);
+			if(list[middle].getID() == target.getID()){
+				found = true;
+				System.out.println("Took " + counter + " tries to find " + target + ".");
+				response = list[middle];
+				break;
+			}
+			else{
+				if(list[middle].getID() < target.getID()){
+					lowest = middle;
+					middle = Math.round((highest - middle) / 2) + middle;
+					
+				}
+				else{
+					highest = middle;
+					middle = Math.round((middle - lowest) / 2);
+				}
+				//System.out.println("hi: " + highest + ", lo: " + lowest);
+				//System.out.println("New middle is " + middle);
+			}
+			if(reachedEnd){
+				System.out.println("Couldn't find " + target + " in " + counter + " tries.");
+				break;
+			}
+			if(middle == (list.length - 1) || middle == 0){
+				reachedEnd = true;
+			}
+		}
+		return response;
+	}
 }
