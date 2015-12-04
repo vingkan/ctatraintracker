@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -103,7 +104,12 @@ public abstract class Menu {
 	}
 	
 	public void tripPlanner(){
-		//LOL we'll do this last
+		CTAStop end = searchForStop();
+		LocationComparator locationComparator = new LocationComparator(end);
+		Collections.sort(system.getStops(), locationComparator);
+		CTAStop start = searchForStop();
+		system.spotLocation(start, "Start: " + start.getName(), this);
+		system.spotConcurrentLocation(end, "End: " + end.getName(), this);
 	}
 	
 	public void exitProgram(){

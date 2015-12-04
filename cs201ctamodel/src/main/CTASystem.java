@@ -229,5 +229,12 @@ public class CTASystem {
 		this.map.setVisible(true);
 		System.out.println("Spot Location Opened Map");
 	}
+	
+	public void spotConcurrentLocation(Location location, String label, Menu menu){
+		this.map.addPOI(new POI(location.getPoint(), label));
+		System.out.println("227 visible: " + this.map.isVisible());
+		this.map.setVisible(true);
+		System.out.println("Spot Location Opened Map");
+	}
 
 }
