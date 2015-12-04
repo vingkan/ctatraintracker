@@ -19,6 +19,14 @@ public class CTARoute {
 		this.path = new LinkedList<CTAStop>();
 	}
 	
+	public CTARoute(RouteType type, CTASystem cta, int[] stopIDs){
+		this.type = type;
+		this.path = new LinkedList<CTAStop>();
+		for(Integer stopID : stopIDs){
+			this.path.add(cta.getStopByID(stopID));
+		}
+	}
+	
 	
 
 	@Override
