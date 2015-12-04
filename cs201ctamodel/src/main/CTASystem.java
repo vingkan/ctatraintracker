@@ -15,9 +15,11 @@ import eu.jacquet80.minigeo.Segment;
 public class CTASystem {
 	
 	private List<CTAStop> stops;
+	private MapWindow map;
 	
 	public CTASystem(){
 		this.stops = new ArrayList<CTAStop>();
+		this.map = CTASystem.getMapWindowFromFile("chicago.poly.txt");
 	}
 	
 	public CTAStop searchStopsByName(String query){
@@ -41,10 +43,7 @@ public class CTASystem {
 			String line;
 			Point cursor = null;
 			Point previous = null;
-			int readCount = 0;
-			int errorCount = 0;
 			while((line = reader.readLine()) != null){
-				readCount++;
 				Matcher matcher = POINT.matcher(line);
 				if(matcher.matches()){
 					double longitude = Double.parseDouble(matcher.group(1));
@@ -56,11 +55,10 @@ public class CTASystem {
 					previous = cursor;
 				}
 				else{
-					errorCount++;
+					System.out.println("ERROR: Could not draw map point.");
 				}
 			}
 			reader.close();
-			System.out.println("Read " + readCount + " with " + errorCount + " errors.");
 		}
 		catch(Exception e){
 			System.out.println("Encountered Exception: " + e);
@@ -69,8 +67,15 @@ public class CTASystem {
 	}
 	
 	public void displayMap(){
-		MapWindow map = CTASystem.getMapWindowFromFile("chicago.poly.txt");
-		map.setVisible(true);
+		this.map.setVisible(true);
+	}
+
+	public MapWindow getMap() {
+		return map;
+	}
+
+	public void setMap(MapWindow map) {
+		this.map = map;
 	}
 
 	public List<CTAStop> getStops() {
