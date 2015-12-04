@@ -7,7 +7,7 @@ public enum RouteType {
 	CUSTOM ("Custom Route", Color.GRAY),
 	GREEN_LINE ("Green Line", new Color(0x00A950)),
 	RED_LINE ("Red Line", Color.RED),
-	BLUE_LINE ("Blue Line", Color.BLUE),
+	BLUE_LINE ("Blue Line", new Color(0x00A0E0)),
 	ORANGE_LINE ("Orange Line", Color.ORANGE),
 	YELLOW_LINE ("Yellow Line", Color.YELLOW),
 	BROWN_LINE ("Brown Line", new Color(0x754200)),
