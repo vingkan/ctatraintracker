@@ -1,5 +1,7 @@
 package main;
 
+import eu.jacquet80.minigeo.Point;
+
 public class Location {
 	
 	private String name;
@@ -138,6 +140,11 @@ public class Location {
 
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
+	}
+	
+	public Point getPoint(){
+		Point point = new Point(this.latitude, this.longitude);
+		return point;
 	}
 
 }

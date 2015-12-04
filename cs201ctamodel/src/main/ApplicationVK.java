@@ -30,6 +30,7 @@ public class ApplicationVK {
 		System.out.println(cta.searchStopsByName("Adams/Wabash"));
 		System.out.println(cta.searchStopsByName("Tower 12"));
 		
+		cta.updateMapPoints();
 		cta.displayMap();
 		
 	}

@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import eu.jacquet80.minigeo.MapWindow;
+import eu.jacquet80.minigeo.POI;
 import eu.jacquet80.minigeo.Point;
 import eu.jacquet80.minigeo.Segment;
 
@@ -70,6 +71,12 @@ public class CTASystem {
 		this.map.setVisible(true);
 	}
 
+	public void updateMapPoints(){
+		for(CTAStop stop : this.stops){
+			this.map.addPOI(new POI(stop.getPoint(), ""));
+		}
+	}
+	
 	public MapWindow getMap() {
 		return map;
 	}

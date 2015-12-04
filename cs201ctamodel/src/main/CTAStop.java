@@ -46,8 +46,7 @@ public class CTAStop extends Location{
 		for(String line : this.routes){
 			response += "\n - " + line;
 		}
-		return response;
-				
+		return response;	
 	}
 
 	public int getID() {
