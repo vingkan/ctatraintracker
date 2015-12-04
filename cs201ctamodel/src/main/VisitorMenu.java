@@ -1,16 +1,19 @@
 package main;
 
 public class VisitorMenu extends Menu {
-
+	
 	public VisitorMenu(CTASystem system){
 		super(system);
+		this.setOptions(VISITOR_OPTIONS);
 	}
 	
-	public void displayOptions(){
-		//To be implemented by child class.
+	public void selectOption(String choice){
+		switch(choice){
+			case "Find a Station":
+				findStation();
+				break;
+			default:
+		}
 	}
-	
-	public void selectOption(){
-		//To be implemented by child class.
-	}
+
 }

@@ -4,6 +4,12 @@ import javax.swing.JOptionPane;
 
 public abstract class Menu {
 
+	protected static final String[] VISITOR_OPTIONS = {
+		"Find Stop",
+		"Trip Planner",
+		"Exit Program"
+	};
+	
 	private CTASystem system;
 	private Location userLocation;
 	private String[] options;
@@ -36,6 +42,10 @@ public abstract class Menu {
 	
 	public void selectOption(String choice){
 		//To be implemented by child class.
+	}
+	
+	public void findStation(){
+		
 	}
 
 	public CTASystem getSystem() {
