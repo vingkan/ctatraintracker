@@ -31,4 +31,14 @@ public enum RouteType {
 		return color;
 	}
 	
+	public static RouteType getTypeByName(String name){
+		RouteType response = RouteType.CUSTOM;
+		for(RouteType type : RouteType.values()){
+			if(type.getName().equals(name)){
+				response = type;
+			}
+		}
+		return response;
+	}
+	
 }
