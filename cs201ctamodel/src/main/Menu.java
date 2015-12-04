@@ -55,7 +55,7 @@ public abstract class Menu {
 		//To be implemented by child class.
 	}
 	
-	public void findStation(){
+	public CTAStop searchForStop(){
 		int size = system.getStops().size();
 		CTAStop[] stopsList = new CTAStop[size];
 		for(int i = 0; i < size; i++){
@@ -65,11 +65,16 @@ public abstract class Menu {
 			null, "CTA Stops",
 			null, JOptionPane.PLAIN_MESSAGE,
 			null, stopsList, stopsList[0]);
+		return choice;
+	}
+	
+	public void findStation(){
+		CTAStop choice = searchForStop();
 		system.spotLocation(choice, this);
 	}
 	
 	public void tripPlanner(){
-		
+		//LOL we'll do this last
 	}
 	
 	public void exitProgram(){

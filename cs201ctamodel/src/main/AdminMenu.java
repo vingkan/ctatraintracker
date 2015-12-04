@@ -15,13 +15,41 @@ public class AdminMenu extends Menu {
 		return "Chicago Transit Authority: Administrative Menu";
 	}
 	
+	@Override
 	public void selectOption(String choice){
 		switch(choice){
-			case "Find a Station":
+			case "Add Stop":
+				addStation();
+				break;
+			case "Edit Stop":
+				editStation();
+				break;
+			case "Remove Stop":
+				removeStation();
+				break;
+			case "Find Stop":
 				findStation();
+				break;
+			case "Trip Planner":
+				tripPlanner();
+				break;
+			case "Exit Program":
+				exitProgram();
 				break;
 			default:
 		}
+	}
+	
+	public void addStation(){
+		
+	}
+	
+	public void editStation(){
+		
+	}
+	
+	public void removeStation(){
+		
 	}
 	
 }
