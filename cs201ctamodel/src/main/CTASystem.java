@@ -55,8 +55,15 @@ public class CTASystem {
 		this.stops = stops;
 	}
 	
-	public void addStop(CTAStop stop){
+	public void addStop(CTAStop stop, boolean refresh){
 		this.stops.add(stop);
+		if(refresh){
+			this.refreshMap();
+		}
+	}
+	
+	public void addStop(CTAStop stop){
+		this.addStop(stop, false);
 	}
 	
 	public void removeStop(int stopID, boolean refresh){
@@ -72,6 +79,10 @@ public class CTASystem {
 		if(refresh){
 			this.refreshMap();
 		}
+	}
+	
+	public void removeStop(int stopID){
+		removeStop(stopID, false);
 	}
 
 	public List<CTARoute> getRoutes() {
