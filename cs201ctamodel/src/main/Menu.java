@@ -3,11 +3,7 @@ package main;
 import java.util.Collections;
 import java.util.List;
 
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-
-import ca.odell.glazedlists.GlazedLists;
-import ca.odell.glazedlists.swing.AutoCompleteSupport;
 
 public abstract class Menu {
 
@@ -64,8 +60,6 @@ public abstract class Menu {
 	}
 	
 	public CTAStop searchForStop(String prompt){
-		LocationComparator nameComparator = new LocationComparator("ALPHABETICAL");
-		Collections.sort(system.getStops(), nameComparator);
 		int size = system.getStops().size();
 		CTAStop[] stopsList = new CTAStop[size];
 		for(int i = 0; i < size; i++){

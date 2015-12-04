@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Collections;
+
 import javax.swing.JOptionPane;
 
 public class AdminMenu extends Menu {
@@ -52,6 +54,9 @@ public class AdminMenu extends Menu {
 		CTAStop newStop = new CTAStop(name, lat, lon, editRoute.getType());
 		newStop.setID(getSystem().getStops().size() + 100);
 		getSystem().addStop(newStop);
+		
+		LocationComparator nameComparator = new LocationComparator("ALPHABETICAL");
+		Collections.sort(getSystem().getStops(), nameComparator);
 		
 		String[] decisionOptions = {"Before", "After"};
 		String decision = Converter.getAcceptableStrings("Would you like the new stop to go before or after an existing stop?", decisionOptions, false);
