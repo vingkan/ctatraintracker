@@ -10,6 +10,12 @@ public abstract class Menu {
 		"Exit Program"
 	};
 	
+	protected static final String[] ADMIN_OPTIONS = {
+		"Add Stop",
+		"Edit Stop",
+		"Remove Stop"
+	};
+	
 	private CTASystem system;
 	private Location userLocation;
 	private String[] options;
