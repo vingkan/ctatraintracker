@@ -23,6 +23,16 @@ public class CTASystem {
 		this.map = CTASystem.getMapWindowFromFile("chicago.poly.txt");
 	}
 	
+	public CTAStop getStopByID(int idQuery){
+		CTAStop response = new CTAStop();
+		for(CTAStop stop : this.stops){
+			if(stop.getID() == idQuery){
+				response = stop;
+			}
+		}
+		return response;
+	}
+	
 	public CTAStop searchStopsByName(String query){
 		CTAStop response = new CTAStop();
 		for(CTAStop stop : this.stops){

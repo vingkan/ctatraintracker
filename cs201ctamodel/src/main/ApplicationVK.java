@@ -23,9 +23,12 @@ public class ApplicationVK {
 			System.out.println("Encountered Exception: " + e);
 		}
 		
-		for(CTAStop stop : cta.getStops()){
+		/*for(CTAStop stop : cta.getStops()){
 			System.out.println(stop + "\n");
-		}
+		}*/
+		
+		CTARoute greenIIT = new CTARoute(RouteType.GREEN_LINE);
+		greenIIT.getPath().add(cta.getStopByID(30080));
 		
 		cta.updateMapPoints();
 		cta.displayMap();
