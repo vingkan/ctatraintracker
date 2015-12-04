@@ -38,6 +38,7 @@ public class CTASystem {
 	
 	public static MapWindow getMapWindowFromFile(String path){
 		MapWindow map = new MapWindow();
+		map.setTitle("Chicago Transit Authority: L-Trains Map");
 		try{
 			FileReader file = new FileReader(path);
 			BufferedReader reader = new BufferedReader(file);
@@ -72,11 +73,11 @@ public class CTASystem {
 	}
 
 	public void updateMapPoints(){
-		this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
+		//this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
 		for(CTAStop stop : this.stops){
 			System.out.println(stop.getLatitude());
 			System.out.println(stop.getLongitude());
-			this.map.addPOI(new POI(new Point(stop.getLatitude(), stop.getLongitude()), "0"));
+			this.map.addPOI(new POI(stop.getPoint(), ""));
 		}
 	}
 	

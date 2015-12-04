@@ -9,7 +9,7 @@ public class ApplicationVK {
 		
 		CTASystem cta = new CTASystem();
 
-		File file = new File("cta-sample-stops-pipes.csv");
+		File file = new File("cta-system-stops-pipes.csv");
 		try{
 			Scanner scan = new Scanner(file);
 			while(scan.hasNextLine()){
