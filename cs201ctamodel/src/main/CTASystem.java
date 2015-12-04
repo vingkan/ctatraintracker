@@ -10,6 +10,16 @@ public class CTASystem {
 	public CTASystem(){
 		this.stops = new ArrayList<CTAStop>();
 	}
+	
+	public CTAStop searchStopsByName(String query){
+		CTAStop response = new CTAStop();
+		for(CTAStop stop : this.stops){
+			if(stop.getName().equals(query)){
+				response = stop;
+			}
+		}
+		return response;
+	}
 
 	public List<CTAStop> getStops() {
 		return stops;

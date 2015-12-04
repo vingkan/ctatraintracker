@@ -2,5 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/google-api-services-mapsengine-v1-rev64-java-1.21.0/mapsengine/google-api-services-mapsengine-v1-rev64-1.21.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/google-api-services-mapsengine-v1-rev64-java-1.21.0/mapsengine/google-api-services-mapsengine-v1-rev64-1.21.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/google-api-services-mapsengine-v1-rev64-java-1.21.0/mapsengine/google-api-services-mapsengine-v1-rev64-1.21.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

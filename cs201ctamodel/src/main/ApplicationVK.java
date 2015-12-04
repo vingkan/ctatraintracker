@@ -23,10 +23,13 @@ public class ApplicationVK {
 			System.out.println("Encountered Exception: " + e);
 		}
 		
-		for(CTAStop stop : cta.getStops()){
+		/*for(CTAStop stop : cta.getStops()){
 			System.out.println(stop + "\n");
-		}
+		}*/
 
+		System.out.println(cta.searchStopsByName("Adams/Wabash"));
+		System.out.println(cta.searchStopsByName("Tower 12"));
+		
 	}
 
 }
