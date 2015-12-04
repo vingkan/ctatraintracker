@@ -26,5 +26,7 @@
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/sqlite-jdbc-3.7.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Documents/GitHub/ctatraintracker/cs201ctamodel/minigeo-r6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Documents/GitHub/ctatraintracker/cs201ctamodel/org.apache.commons.codec-1.8-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Documents/GitHub/ctatraintracker/cs201ctamodel/org.apache.commons.lang-2.6-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

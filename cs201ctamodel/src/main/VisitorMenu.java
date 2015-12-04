@@ -12,6 +12,12 @@ public class VisitorMenu extends Menu {
 			case "Find a Station":
 				findStation();
 				break;
+			case "Trip Planner":
+				findStation();
+				break;
+			case "Exit Program":
+				findStation();
+				break;
 			default:
 		}
 	}

@@ -22,7 +22,7 @@ public abstract class Menu {
 	
 	public Menu(CTASystem system){
 		this.system = system;
-		this.userLocation = Menu.promptUserLocation();
+		//this.userLocation = Menu.promptUserLocation();
 		this.options = new String[0];
 	}
 	

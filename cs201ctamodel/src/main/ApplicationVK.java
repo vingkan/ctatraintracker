@@ -33,7 +33,10 @@ public class ApplicationVK {
 		cta.removeStop(30160);
 		cta.removeStop(30045);
 		cta.removeStop(30146);
-		cta.removeStop(30248, true);
+		cta.removeStop(30248);
+		
+		Menu menu = new VisitorMenu(cta);
+		menu.displayOptions();
 		
 	}
 
