@@ -35,7 +35,7 @@ public abstract class Menu {
 	
 	public void displayOptions(){
 		String choice = (String)JOptionPane.showInputDialog(
-			null, "Chicago Transit Authority: Application Menu",
+			null, this.toString(),
 			null, JOptionPane.PLAIN_MESSAGE,
 			null, this.getOptions(), this.getOptions()[0]);
 		try{
@@ -46,6 +46,11 @@ public abstract class Menu {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return "Chicago Transit Authority: Menu";
+	}
+
 	public void selectOption(String choice){
 		//To be implemented by child class.
 	}

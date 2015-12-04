@@ -10,6 +10,11 @@ public class AdminMenu extends Menu {
 		this.setOptions(ALL_OPTIONS);
 	}
 	
+	@Override
+	public String toString() {
+		return "Chicago Transit Authority: Administratie Menu";
+	}
+	
 	public void selectOption(String choice){
 		switch(choice){
 			case "Find a Station":

@@ -2,9 +2,11 @@ package main;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +27,32 @@ public class CTASystem {
 		this.stops = new ArrayList<CTAStop>();
 		this.routes = new ArrayList<CTARoute>();
 		this.map = CTASystem.getMapWindowFromFile(CHICAGO_BOUNDS);
+	}
+	
+	public CTASystem(String[] path){
+		this.stops = new ArrayList<CTAStop>();
+		this.routes = new ArrayList<CTARoute>();
+		this.map = CTASystem.getMapWindowFromFile(CHICAGO_BOUNDS);
+		//Read from files to populate system
+		File stopsFile = new File(path[0]);
+		File routesFile = new File(path[1]);
+		try{
+			Scanner scan = new Scanner(stopsFile);
+			while(scan.hasNextLine()){
+				String line = scan.nextLine();
+				this.addStop(new CTAStop(line));
+			}
+			scan.close();
+			Scanner mapper = new Scanner(routesFile);
+			while(mapper.hasNextLine()){
+				String line = mapper.nextLine();
+				this.addRoute(line);	
+			}
+			mapper.close();
+		}
+		catch(Exception e){
+			System.out.println("Encountered Exception: " + e);
+		}	
 	}
 	
 	public CTAStop getStopByID(int idQuery){

@@ -7,6 +7,11 @@ public class VisitorMenu extends Menu {
 		this.setOptions(VISITOR_OPTIONS);
 	}
 	
+	@Override
+	public String toString() {
+		return "Chicago Transit Authority: Visitor Menu";
+	}
+	
 	public void selectOption(String choice){
 		switch(choice){
 			case "Find a Station":
