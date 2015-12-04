@@ -5,30 +5,46 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+/*
+ * Menu class to run program operations
+ * This class is abstract
+ */
 public abstract class Menu {
 
+	/*
+	 * Commands available to Visitors
+	 */
 	protected static final String[] VISITOR_OPTIONS = {
 		"Find Stop",
 		"Trip Planner",
 		"Exit Program"
 	};
 	
+	/*
+	 * Commands available to Administrators
+	 */
 	protected static final String[] ADMIN_OPTIONS = {
 		"Add Stop",
 		"Edit Stop",
 		"Remove Stop"
 	};
 	
-	private CTASystem system;
-	private Location userLocation;
-	private String[] options;
+	private CTASystem system; //CTA System model used in program
+	private Location userLocation; //Location of client
+	private String[] options; //Options available to instance of Menu
 	
+	/*
+	 * Main Constructor
+	 */
 	public Menu(CTASystem system){
 		this.system = system;
 		//this.userLocation = Menu.promptUserLocation();
 		this.options = new String[0];
 	}
 	
+	/*
+	 * Get the user's location coordinates
+	 */
 	public static Location promptUserLocation(){
 		double customLat = Converter.getUserDouble("Please enter your current latitude coordinate."); //41.830770
 		double customLon = Converter.getUserDouble("Please enter your current longitude coordinate."); //-87.630035
@@ -36,6 +52,9 @@ public abstract class Menu {
 		return user;
 	}
 	
+	/*
+	 * Display menu options as selector box for user
+	 */
 	public void displayOptions(){
 		system.getMap().setVisible(false);
 		System.out.println("opening menu");
@@ -55,15 +74,18 @@ public abstract class Menu {
 	public String toString() {
 		return "Chicago Transit Authority: Menu";
 	}
-
-	public void returnToMenu(){
-		displayOptions();
-	}
 	
+	/*
+	 * Refer to an action by its String name and run it
+	 */
 	public void selectOption(String choice){
 		//To be implemented by child class.
 	}
 	
+	/*
+	 * Loops through CTA stops to find a match
+	 * @prompt: message to be displayed to the user at the top of the list
+	 */
 	public CTAStop searchForStop(String prompt){
 		int size = system.getStops().size();
 		CTAStop[] stopsList = new CTAStop[size];
@@ -77,6 +99,9 @@ public abstract class Menu {
 		return choice;
 	}
 	
+	/*
+	 * Similar to above, but only searches through the given list
+	 */
 	public CTAStop searchForStop(List<CTAStop> list){
 		int size = list.size();
 		CTAStop[] stopsList = new CTAStop[size];
@@ -90,6 +115,9 @@ public abstract class Menu {
 		return choice;
 	}
 	
+	/*
+	 * Displays CTA Routes as a selector list for user to choose one
+	 */
 	public CTARoute searchForRoute(){
 		int size = system.getRoutes().size();
 		CTARoute[] routesList = new CTARoute[size];
@@ -103,6 +131,9 @@ public abstract class Menu {
 		return choice;
 	}
 	
+	/*
+	 * Piinpoints a stop on the CTASystem map
+	 */
 	public void findStation(){
 		CTAStop choice = searchForStop("Select a stop.");
 		system.spotLocation(choice, "Found: " + choice.getName(), this);
@@ -122,6 +153,9 @@ public abstract class Menu {
 		system.spotConcurrentLocation(end, "End: " + end.getName(), this);
 	}
 	
+	/*
+	 * Ends the program
+	 */
 	public void exitProgram(){
 		JOptionPane.showMessageDialog(null, "Thank you for using this app. Have a nice day!");
 	}

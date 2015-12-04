@@ -2,14 +2,17 @@ package main;
 
 import eu.jacquet80.minigeo.Point;
 
+/*
+ * Class to show GPS Location with coordinates
+ */
 public class Location {
 	
-	private String name;
-	private double latitude;
-	private double longitude;
+	private String name; //Name of Location
+	private double latitude; //Latitude coordinate
+	private double longitude; //Longitude coordiante
 	
 	/*
-	 * Class for GPSLocation on Earth Map
+	 * Default Constructor
 	 */
 	public Location(){
 		this.name = "Blank Location";
@@ -17,18 +20,27 @@ public class Location {
 		this.longitude = 0.000;
 	}
 	
+	/*
+	 * Standard Constructor
+	 */
 	public Location(String name, double latitude, double longitude){
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 	
+	/*
+	 * String parsing Constructor
+	 */
 	public Location(String name, String latitude, String longitude){
 		this.name = name;
 		this.latitude = Double.parseDouble(latitude);
 		this.longitude = Double.parseDouble(longitude);
 	}
 	
+	/*
+	 * Coordinate parsing constructor
+	 */
 	public Location(String name, String coords){
 		this.name = name;
 		Double[] pair = Location.pairToCoordinates(coords);
@@ -36,6 +48,10 @@ public class Location {
 		this.longitude = pair[1];
 	}
 	
+	/*
+	 * nextLine Constructor
+	 * Integers indicate which parts of the csv have the desired value
+	 */
 	public Location(String line, int nameIndex, int coordsIndex){
 		String[] data = line.split("\\|");
 		this.name = data[nameIndex];
@@ -45,6 +61,9 @@ public class Location {
 		this.longitude = pair[1];
 	}
 	
+	/*
+	 * Converts a string coordinate pair to lon/lat values for constructors
+	 */
 	public static Double[] pairToCoordinates(String coords){
 		coords = coords.replaceAll("[()]", "");
 		String[] data = coords.split(",");

@@ -4,24 +4,36 @@ import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ * Model of a sequence of stops connected to form a train line
+ */
 public class CTARoute {
 
-	private String train;
-	private RouteType type;
-	private List<CTAStop> path;
+	private String train; //Name of train line
+	private RouteType type; //Type of line
+	private List<CTAStop> path; //Sequencce of stops (LinkedList
 	
+	/*
+	 * Default constructor
+	 */
 	public CTARoute(){
 		this.train = "Not In Service";
 		this.type = RouteType.CUSTOM;
 		this.path = new LinkedList<CTAStop>();
 	}
 	
+	/*
+	 * Blank route constructor
+	 */
 	public CTARoute(RouteType type){
 		this.train = type.getName();
 		this.type = type;
 		this.path = new LinkedList<CTAStop>();
 	}
 	
+	/*
+	 * Main constructor
+	 */
 	public CTARoute(String train, RouteType type, CTASystem cta, int[] stopIDs){
 		this.train = train;
 		this.type = type;
@@ -31,6 +43,10 @@ public class CTARoute {
 		}
 	}
 	
+	/*
+	 * Searches for a given stop and returns index
+	 * Returns -1 if not contained
+	 */
 	public int containsStop(CTAStop stop){
 		int index = -1;
 		for(int s = 0; s < this.path.size(); s++){
@@ -41,6 +57,9 @@ public class CTARoute {
 		return index;
 	}
 	
+	/*
+	 * Remove stop from route
+	 */
 	public void removeStop(CTAStop stop){
 		this.path.remove(stop);
 	}

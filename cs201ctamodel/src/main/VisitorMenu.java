@@ -2,6 +2,9 @@ package main;
 
 public class VisitorMenu extends Menu {
 	
+	/*
+	 * This class gives visitors access to the basic functionality defined in the Abstract Menu class
+	 */
 	public VisitorMenu(CTASystem system){
 		super(system);
 		this.setOptions(VISITOR_OPTIONS);

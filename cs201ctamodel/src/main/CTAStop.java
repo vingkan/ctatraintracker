@@ -5,13 +5,18 @@ import java.util.List;
 
 import eu.jacquet80.minigeo.Point;
 
+/*
+ * Model of a stop in the CTA
+ */
 public class CTAStop extends Location{
 
 	private int id;
 	private int stationID;
 	private List<RouteType> routes;
 	
-	
+	/*
+	 * Default constructor
+	 */
 	public CTAStop(){
 		super();
 		this.id = -1;
@@ -29,12 +34,18 @@ public class CTAStop extends Location{
 		this.routes = new ArrayList<RouteType>();
 	}
 	
+	/*
+	 * Main constructor
+	 */
 	public CTAStop(String name, Double lat, Double lon, RouteType type){
 		super(name, lat, lon);
 		this.routes = new ArrayList<RouteType>();
 		this.routes.add(type);
 	}
 	
+	/*
+	 * nextLine constructor
+	 */
 	public CTAStop(String line){
 		super(line, 2, 16);
 		String[] data = line.split("\\|");
@@ -44,6 +55,9 @@ public class CTAStop extends Location{
 		this.getRoutes().addAll(CTAStop.pipesToLines(line));
 	}
 	
+	/*
+	 * Retrieves the routes the stop belongs to from a pipe-separated values file
+	 */
 	public static List<RouteType> pipesToLines(String line){
 		List<RouteType> lines = new ArrayList<RouteType>();
 		String[] data = line.split("\\|");
@@ -77,6 +91,11 @@ public class CTAStop extends Location{
 		return response;	
 	}
 
+	/*
+	 * Returns a point object for use on the map window
+	 * (non-Javadoc)
+	 * @see main.Location#getPoint()
+	 */
 	@Override
 	public Point getPoint(){
 		//Color color = this.routes.get(0).getColor();

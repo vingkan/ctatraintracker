@@ -1,0 +1,17 @@
+Chicago Transit Authority: Administrative Menu
+Took 44850 tries to sort the list.
+Took 10 tries to find CTA Stop 30171
+Location: Blank Location at {0.0, 0.0}
+Station -1 Serves Lines:.
+Took 44850 tries to sort the list.
+Took 14 tries to find CTA Stop 30146
+Location: Blank Location at {0.0, 0.0}
+Station -1 Serves Lines:.
+CTA Stop 30171
+Location: O'Hare (Terminal Arrival) at {41.97766526, -87.90422307}
+Station 40890 Serves Lines:
+ - Blue Line
+CTA Stop 30146
+Location: Harlem (O'Hare Branch) (Forest Pk-bound) at {41.98227, -87.8089}
+Station 40750 Serves Lines:
+ - Blue Line

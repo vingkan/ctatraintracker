@@ -6,8 +6,12 @@ import javax.swing.JOptionPane;
 
 public class AdminMenu extends Menu {
 	
+	/*
+	 * This class gives admins access to the basic functionality defined in the Abstract Menu class as well as expanded control to edit the CTASystem
+	 */
 	public AdminMenu(CTASystem system){
 		super(system);
+		//Combines the two lists of commands to give admin's all-access
 		String[] ALL_OPTIONS = new String[VISITOR_OPTIONS.length + ADMIN_OPTIONS.length];
 		System.arraycopy(ADMIN_OPTIONS, 0, ALL_OPTIONS, 0, ADMIN_OPTIONS.length);
 		System.arraycopy(VISITOR_OPTIONS, 0, ALL_OPTIONS, ADMIN_OPTIONS.length, VISITOR_OPTIONS.length);

@@ -3,6 +3,10 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Station that holds stops in the CTA
+ * Not actually used in this program kek
+ */
 public class CTAStation {
 
 	private int id;

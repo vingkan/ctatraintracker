@@ -19,20 +19,29 @@ import eu.jacquet80.minigeo.POI;
 import eu.jacquet80.minigeo.Point;
 import eu.jacquet80.minigeo.Segment;
 
+/*
+ * Our lord and savior model of the Chicago Transit Authority L-Lines
+ */
 public class CTASystem {
 	
-	private static final String CHICAGO_BOUNDS = "chicago.poly.txt";
+	private static final String CHICAGO_BOUNDS = "chicago.poly.txt"; //.poly file to pull map of Chicago from
 	
-	private List<CTAStop> stops;
-	private List<CTARoute> routes;
-	private MapWindow map;
+	private List<CTAStop> stops; //List of L-Stops
+	private List<CTARoute> routes; //List of routes of L-Stops
+	private MapWindow map; //Display map to visualize system
 	
+	/*
+	 * Default constructor
+	 */
 	public CTASystem(){
 		this.stops = new ArrayList<CTAStop>();
 		this.routes = new ArrayList<CTARoute>();
 		this.map = CTASystem.getMapWindowFromFile(CHICAGO_BOUNDS);
 	}
 	
+	/*
+	 * Main constructor
+	 */
 	public CTASystem(String[] path){
 		this.stops = new ArrayList<CTAStop>();
 		this.routes = new ArrayList<CTARoute>();
@@ -61,6 +70,9 @@ public class CTASystem {
 		drawMapRoutes();
 	}
 	
+	/*
+	 * Searches for a stop by its id
+	 */
 	public CTAStop getStopByID(int idQuery){
 		CTAStop response = new CTAStop();
 		for(CTAStop stop : this.stops){
@@ -71,6 +83,9 @@ public class CTASystem {
 		return response;
 	}
 	
+	/*
+	 * Searches for a stop by its name
+	 */
 	public CTAStop searchStopsByName(String query){
 		CTAStop response = new CTAStop();
 		for(CTAStop stop : this.stops){

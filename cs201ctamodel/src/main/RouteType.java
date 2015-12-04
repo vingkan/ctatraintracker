@@ -2,6 +2,9 @@ package main;
 
 import java.awt.Color;
 
+/*
+ * Enumeration to represent the train lines that run in the CTA
+ */
 public enum RouteType {
 	
 	CUSTOM ("Custom Route", Color.GRAY),
@@ -31,6 +34,9 @@ public enum RouteType {
 		return color;
 	}
 	
+	/*
+	 * Returns corresponding enum based on line name
+	 */
 	public static RouteType getTypeByName(String name){
 		RouteType response = RouteType.CUSTOM;
 		for(RouteType type : RouteType.values()){
