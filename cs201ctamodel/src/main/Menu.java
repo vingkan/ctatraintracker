@@ -65,7 +65,7 @@ public abstract class Menu {
 			null, "CTA Stops",
 			null, JOptionPane.PLAIN_MESSAGE,
 			null, stopsList, stopsList[0]);
-		system.spotLocation(choice);
+		system.spotLocation(choice, this);
 	}
 	
 	public void tripPlanner(){

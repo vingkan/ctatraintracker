@@ -12,9 +12,10 @@ public class VisitorMenu extends Menu {
 		return "Chicago Transit Authority: Visitor Menu";
 	}
 	
+	@Override
 	public void selectOption(String choice){
 		switch(choice){
-			case "Find a Station":
+			case "Find Stop":
 				findStation();
 				break;
 			case "Trip Planner":

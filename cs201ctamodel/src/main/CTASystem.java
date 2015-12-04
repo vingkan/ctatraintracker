@@ -1,6 +1,8 @@
 package main;
 
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -220,9 +222,17 @@ public class CTASystem {
 		}
 	}
 	
-	public void spotLocation(Location location){
-		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+	public void spotLocation(Location location, Menu menu){
 		refreshMap();
+		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+		this.map.addWindowListener(new WindowAdapter(){
+			@Override
+			public void windowClosing(WindowEvent e){
+				e.getWindow().dispose();
+				menu.displayOptions();
+			}
+		});
+		toggleMap(true);
 	}
 
 }
