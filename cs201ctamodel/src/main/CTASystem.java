@@ -222,9 +222,7 @@ public class CTASystem {
 		}
 	}
 	
-	public void spotLocation(Location location, Menu menu){
-		refreshMap();
-		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+	public void setMenuCallback(Menu menu){
 		this.map.addWindowListener(new WindowAdapter(){
 			@Override
 			public void windowClosing(WindowEvent e){
@@ -232,6 +230,12 @@ public class CTASystem {
 				menu.displayOptions();
 			}
 		});
+	}
+	
+	public void spotLocation(Location location, Menu menu){
+		refreshMap();
+		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+		setMenuCallback(menu);
 		toggleMap(true);
 	}
 
