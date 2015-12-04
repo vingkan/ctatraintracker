@@ -142,8 +142,8 @@ public class CTASystem {
 		this.routes.add(route);
 	}
 	
-	public void addRoute(RouteType type, int[] stopIDs){
-		this.routes.add(new CTARoute(type, this, stopIDs));
+	public void addRoute(String train, RouteType type, int[] stopIDs){
+		this.routes.add(new CTARoute(train, type, this, stopIDs));
 	}
 
 }

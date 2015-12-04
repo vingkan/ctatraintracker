@@ -6,28 +6,30 @@ import java.util.List;
 
 public class CTARoute {
 
+	private String train;
 	private RouteType type;
 	private List<CTAStop> path;
 	
 	public CTARoute(){
+		this.train = "Not In Service";
 		this.type = RouteType.CUSTOM;
 		this.path = new LinkedList<CTAStop>();
 	}
 	
 	public CTARoute(RouteType type){
+		this.train = type.getName();
 		this.type = type;
 		this.path = new LinkedList<CTAStop>();
 	}
 	
-	public CTARoute(RouteType type, CTASystem cta, int[] stopIDs){
+	public CTARoute(String train, RouteType type, CTASystem cta, int[] stopIDs){
+		this.train = train;
 		this.type = type;
 		this.path = new LinkedList<CTAStop>();
 		for(Integer stopID : stopIDs){
 			this.path.add(cta.getStopByID(stopID));
 		}
 	}
-	
-	
 
 	@Override
 	public String toString() {
