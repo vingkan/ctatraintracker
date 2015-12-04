@@ -24,8 +24,9 @@ public class CTARoute {
 	public String toString() {
 		String response = "CTA Route: " + this.type.getName() + "\n";
 		response += "---------------------------------" + "\n";
-		for(CTAStop stop : path){
-			response += stop.toString();
+		for(int s = 0; s < this.path.size(); s++){
+			CTAStop stop = this.path.get(s);
+			response += s + ". " + stop.toString();
 		}
 		response += "\n" + "---------------------------------";
 		return response;
