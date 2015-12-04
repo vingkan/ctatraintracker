@@ -15,7 +15,7 @@ import eu.jacquet80.minigeo.Segment;
 
 public class CTASystem {
 	
-	private static final String cityBounds = "chicago.poly.txt";
+	private static final String CHICAGO_BOUNDS = "chicago.poly.txt";
 	
 	private List<CTAStop> stops;
 	private List<CTARoute> routes;
@@ -24,7 +24,7 @@ public class CTASystem {
 	public CTASystem(){
 		this.stops = new ArrayList<CTAStop>();
 		this.routes = new ArrayList<CTARoute>();
-		this.map = CTASystem.getMapWindowFromFile(cityBounds);
+		this.map = CTASystem.getMapWindowFromFile(CHICAGO_BOUNDS);
 	}
 	
 	public CTAStop getStopByID(int idQuery){
@@ -125,7 +125,7 @@ public class CTASystem {
 	public void refreshMap(){
 		System.out.println("Refresh");
 		toggleMap(false);
-		this.map = getMapWindowFromFile(cityBounds);
+		this.map = getMapWindowFromFile(CHICAGO_BOUNDS);
 		drawMapPoints();
 		drawMapRoutes();
 		toggleMap(true);
