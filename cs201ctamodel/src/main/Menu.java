@@ -37,6 +37,7 @@ public abstract class Menu {
 	}
 	
 	public void displayOptions(){
+		system.getMap().setVisible(false);
 		System.out.println("opening menu");
 		String choice = (String)JOptionPane.showInputDialog(
 			null, this.toString(),
@@ -55,6 +56,10 @@ public abstract class Menu {
 		return "Chicago Transit Authority: Menu";
 	}
 
+	public void returnToMenu(){
+		displayOptions();
+	}
+	
 	public void selectOption(String choice){
 		//To be implemented by child class.
 	}

@@ -12,6 +12,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.WindowConstants;
+
 import eu.jacquet80.minigeo.MapWindow;
 import eu.jacquet80.minigeo.POI;
 import eu.jacquet80.minigeo.Point;
@@ -142,6 +144,7 @@ public class CTASystem {
 	
 	public void updateMap(){
 		this.map = getMapWindowFromFile(CHICAGO_BOUNDS);
+		//this.map.clear();
 		drawMapPoints();
 		drawMapRoutes();
 		System.out.println("updated map");
@@ -185,6 +188,16 @@ public class CTASystem {
 		catch(Exception e){
 			System.out.println("Encountered Exception: " + e);
 		}
+		/*JButton back = new JButton();
+		back.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				//returnToMenu();
+				System.out.println("hello");
+				e.consume();
+			}
+		});
+		map.add(back);*/
 		return map;
 	}
 	
@@ -211,13 +224,17 @@ public class CTASystem {
 	public void setMenuCallback(Menu menu){
 		updateMap();
 		System.out.println(menu);
+		this.map.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		this.map.addWindowListener(new WindowAdapter(){
 			@Override
 			public void windowClosing(WindowEvent e){
+				//e.getWindow().dispose();
+				e.getWindow().setVisible(false);
 				System.out.println("217" + menu);
 				System.out.println("displayable: " + e.getWindow().isDisplayable());
 				menu.displayOptions();
 				System.out.println("220visible: " + map.isVisible());
+				//super.windowClosing(e);
 			}
 		});
 	}

@@ -8,14 +8,14 @@ public class ApplicationVK {
 	public static void main(String[] args) {
 		
 		/*cta.removeStop(30171);
-		cta.removeStop(30160);
+		cta.removeStop(30160
 		cta.removeStop(30045);
 		cta.removeStop(30146);
 		cta.removeStop(30248);*/
 		
-		//runApplication();
-		System.out.println("---------------------------");
-		searchingTest();
+		runApplication();
+		/*System.out.println("---------------------------");
+		searchingTest();*/
 		
 	}
 
