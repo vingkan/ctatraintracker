@@ -7,14 +7,14 @@ public class CTAStop extends Location{
 
 	private int id;
 	private int stationID;
-	private List<String> routes;
+	private List<RouteType> routes;
 	
 	
 	public CTAStop(){
 		super();
 		this.id = -1;
 		this.stationID = -1;
-		this.routes = new ArrayList<String>();
+		this.routes = new ArrayList<RouteType>();
 	}
 	
 	public CTAStop(String line){
@@ -22,14 +22,24 @@ public class CTAStop extends Location{
 		String[] data = line.split("\\|");
 		this.id = Integer.parseInt(data[0]);
 		this.stationID = Integer.parseInt(data[5]);
-		this.routes = new ArrayList<String>();
+		this.routes = new ArrayList<RouteType>();
 		this.getRoutes().addAll(CTAStop.pipesToLines(line));
 	}
 	
-	public static List<String> pipesToLines(String line){
-		List<String> lines = new ArrayList<String>();
+	public static List<RouteType> pipesToLines(String line){
+		List<RouteType> lines = new ArrayList<RouteType>();
 		String[] data = line.split("\\|");
-		String[] key = {"Red Line", "Blue Line", "Green Line", "Brown Line", "Purple Line", "Purple Express", "Yellow Line", "Pink Line", "Orange Line"};
+		RouteType[] key = {
+			RouteType.RED_LINE,
+			RouteType.BLUE_LINE,
+			RouteType.GREEN_LINE,
+			RouteType.BROWN_LINE,
+			RouteType.PURPLE_LINE,
+			RouteType.PURPLE_EXPRESS,
+			RouteType.YELLOW_LINE,
+			RouteType.PINK_LINE,
+			RouteType.ORANGE_LINE
+		};
 		for(int i = 0; i < (16-8); i++){
 			if(data[i+7].equals("TRUE")){
 				lines.add(key[i]);
@@ -65,11 +75,11 @@ public class CTAStop extends Location{
 		this.stationID = stationID;
 	}
 
-	public List<String> getRoutes() {
+	public List<RouteType> getRoutes() {
 		return routes;
 	}
 
-	public void setRoutes(List<String> routes) {
+	public void setRoutes(List<RouteType> routes) {
 		this.routes = routes;
 	}
 	

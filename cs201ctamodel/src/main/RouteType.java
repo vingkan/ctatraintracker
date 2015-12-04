@@ -11,7 +11,8 @@ public enum RouteType {
 	YELLOW_LINE ("Yellow Line", Color.YELLOW),
 	BROWN_LINE ("Brown Line", new Color(0x754200)),
 	PURPLE_LINE ("Purple Line", new Color(0x3B2D83)),
-	PURPLE_EXPRESS ("Purple Express", Color.MAGENTA);
+	PURPLE_EXPRESS ("Purple Express", Color.MAGENTA),
+	PINK_LINE ("Pink Line", Color.PINK);
 
 	private String name;
 	private Color color;
