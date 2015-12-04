@@ -29,18 +29,25 @@ public class Location {
 	
 	public Location(String name, String coords){
 		this.name = name;
-		String[] pair = coords.split("\\|");
-		this.latitude = Double.parseDouble(pair[0].replaceAll("[^\\d]", ""));
-		this.longitude = Double.parseDouble(pair[1].replaceAll("[^\\d]", ""));
+		Double[] pair = Location.pairToCoordinates(coords);
+		this.latitude = pair[0];
+		this.longitude = pair[0];
 	}
 	
 	public Location(String line, int nameIndex, int coordsIndex){
 		String[] data = line.split("\\|");
 		this.name = data[nameIndex];
 		String coords = data[coordsIndex];
-		String[] pair = coords.split(",");
-		this.latitude = Double.parseDouble(pair[0].replaceAll("[^\\d]", ""));
-		this.longitude = Double.parseDouble(pair[1].replaceAll("[^\\d]", ""));
+		Double[] pair = Location.pairToCoordinates(coords);
+		this.latitude = pair[0];
+		this.longitude = pair[0];
+	}
+	
+	public static Double[] pairToCoordinates(String coords){
+		coords = coords.replaceAll("[()]", "");
+		String[] data = coords.split(",");
+		Double[] pair = {Double.parseDouble(data[0]), Double.parseDouble(data[1])};
+		return pair;
 	}
 	
 	/*

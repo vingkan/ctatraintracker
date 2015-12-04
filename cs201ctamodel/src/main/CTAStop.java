@@ -18,7 +18,7 @@ public class CTAStop extends Location{
 	}
 	
 	public CTAStop(String line){
-		super(line, 1, 16);
+		super(line, 2, 16);
 		String[] data = line.split("\\|");
 		this.id = Integer.parseInt(data[0]);
 		this.stationID = Integer.parseInt(data[5]);
@@ -44,7 +44,7 @@ public class CTAStop extends Location{
 		response += super.toString() + "\n";
 		response += "Station " + this.stationID + " Serves Lines:";
 		for(String line : this.routes){
-			response += "\n" + line;
+			response += "\n - " + line;
 		}
 		return response;
 				
