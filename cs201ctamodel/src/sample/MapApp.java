@@ -1,32 +1,25 @@
 package sample;
 
-import processing.core.PApplet;
-import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.utils.MapUtils;
+import java.awt.Color;
 
-/**
- * Hello Unfolding World.
- * 
- * Download the distribution with examples for many more examples and features.
- */
-public class MapApp extends PApplet {
+import eu.jacquet80.minigeo.MapWindow;
+import eu.jacquet80.minigeo.Point;
+import eu.jacquet80.minigeo.Segment;
 
-	UnfoldingMap map;
+public class MapApp {
 
-	public void setup() {
-		size(800, 600, OPENGL);
+	public static void main(String[] args) {
 
-		map = new UnfoldingMap(this);
-		map.zoomAndPanTo(10, new Location(52.5f, 13.4f));
+		MapWindow window = new MapWindow();
+		Segment segment = new Segment(
+			new Point(48, 2),
+			new Point(45, -1),
+			Color.RED
+		);
+		window.addSegment(segment);
+		
+		window.setVisible(true);
 
-		MapUtils.createDefaultEventDispatcher(this, map);
-	}
-
-	public void draw() {
-		background(0);
-		map.draw();
 	}
 
 }
-
