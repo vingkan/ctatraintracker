@@ -30,6 +30,20 @@ public class CTARoute {
 			this.path.add(cta.getStopByID(stopID));
 		}
 	}
+	
+	public int containsStop(CTAStop stop){
+		int index = -1;
+		for(int s = 0; s < this.path.size(); s++){
+			if(this.path.get(s).getID() == stop.getID()){
+				index = s;
+			}
+		}
+		return index;
+	}
+	
+	public void removeStop(CTAStop stop){
+		this.path.remove(stop);
+	}
 
 	@Override
 	public String toString() {
