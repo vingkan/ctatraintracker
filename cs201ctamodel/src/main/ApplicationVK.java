@@ -37,6 +37,12 @@ public class ApplicationVK {
 		cta.drawMapRoutes();
 		cta.toggleMap(true);
 		
+		cta.removeStop(30171, true);
+		cta.removeStop(30160, true);
+		cta.removeStop(30045, true);
+		cta.removeStop(30146, true);
+		cta.removeStop(30248, true);
+		
 	}
 
 }
