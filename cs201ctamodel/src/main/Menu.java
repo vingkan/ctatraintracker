@@ -42,7 +42,7 @@ public abstract class Menu {
 			selectOption(choice);
 		}
 		catch(Exception e){
-			JOptionPane.showMessageDialog(null, "Thank you for using this app. Have a nice day!");
+			exitProgram();
 		}
 	}
 	
@@ -56,7 +56,24 @@ public abstract class Menu {
 	}
 	
 	public void findStation(){
+		int size = system.getStops().size();
+		CTAStop[] stopsList = new CTAStop[size];
+		for(int i = 0; i < size; i++){
+			stopsList[i] = system.getStops().get(i);
+		}
+		CTAStop choice = (CTAStop)JOptionPane.showInputDialog(
+			null, "CTA Stops",
+			null, JOptionPane.PLAIN_MESSAGE,
+			null, stopsList, stopsList[0]);
+		system.spotLocation(choice);
+	}
+	
+	public void tripPlanner(){
 		
+	}
+	
+	public void exitProgram(){
+		JOptionPane.showMessageDialog(null, "Thank you for using this app. Have a nice day!");
 	}
 
 	public CTASystem getSystem() {

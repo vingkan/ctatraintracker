@@ -12,7 +12,7 @@ public class AdminMenu extends Menu {
 	
 	@Override
 	public String toString() {
-		return "Chicago Transit Authority: Administratie Menu";
+		return "Chicago Transit Authority: Administrative Menu";
 	}
 	
 	public void selectOption(String choice){

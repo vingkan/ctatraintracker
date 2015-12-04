@@ -18,10 +18,10 @@ public class VisitorMenu extends Menu {
 				findStation();
 				break;
 			case "Trip Planner":
-				findStation();
+				tripPlanner();
 				break;
 			case "Exit Program":
-				findStation();
+				exitProgram();
 				break;
 			default:
 		}

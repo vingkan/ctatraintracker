@@ -219,5 +219,10 @@ public class CTASystem {
 			}
 		}
 	}
+	
+	public void spotLocation(Location location){
+		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+		refreshMap();
+	}
 
 }

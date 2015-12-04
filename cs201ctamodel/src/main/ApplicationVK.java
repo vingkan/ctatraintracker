@@ -1,5 +1,7 @@
 package main;
 
+import javax.swing.JOptionPane;
+
 public class ApplicationVK {
 
 	private static final String stopsPath = "cta-system-stops-pipes.csv";
@@ -13,6 +15,7 @@ public class ApplicationVK {
 		cta.removeStop(30146);
 		cta.removeStop(30248);*/
 		Menu menu;
+		JOptionPane.showMessageDialog(null, "Welcome to the Chicago Transit Authority Java Platform!\nThe system data will be loaded shortly...");
 		CTASystem cta = new CTASystem(new String[]{stopsPath, routesPath});
 		int password = Converter.getUserInteger("Enter the 4 Digit Pin for Administrative Access");
 		if(password == 1871){
