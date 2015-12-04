@@ -45,16 +45,18 @@ public class AdminMenu extends Menu {
 	public void addStation(){
 		JOptionPane.showMessageDialog(null, "Choose the route to edit.");
 		CTARoute editRoute = searchForRoute();
-		
-		CTAStop newStop = new CTAStop();
-		newStop.setLatitude(41.995483);
-		newStop.setLongitude(-87.9381691);
-		newStop.setName("Hello World Station");
-		//newStop.setRoutes(new ArrayList<RouteType>());
+		String name = JOptionPane.showInputDialog("What will the new station be called?");
+
+		double lat = Converter.getUserDouble("Enter stop latitude.");
+		double lon = Converter.getUserDouble("Enter stop longitude.");
+		CTAStop newStop = new CTAStop(name, lat, lon, editRoute.getType());
+		newStop.setID(getSystem().getStops().size() + 100);
 		getSystem().addStop(newStop);
+		
 		String[] decisionOptions = {"Before", "After"};
 		String decision = Converter.getAcceptableStrings("Would you like the new stop to go before or after an existing stop?", decisionOptions, false);
 		JOptionPane.showMessageDialog(null, "Next you will pick the station the new stop should go " + decision + ".");
+		
 		CTAStop referenceStation = searchForStop(editRoute.getPath());
 		if(decision.toLowerCase().equals("after")){
 			editRoute.getPath().add(editRoute.getPath().indexOf(referenceStation), newStop);
@@ -68,7 +70,16 @@ public class AdminMenu extends Menu {
 	}
 	
 	public void editStation(){
-		
+		CTAStop choice = searchForStop();
+		String name = JOptionPane.showInputDialog(null, "Change Stop Name:", choice.getName());
+		choice.setName(name);
+		double lat = Converter.getUserDouble("New Latitude for Stop: (enter 0 to keep current coordinates)");
+		double lon = Converter.getUserDouble("New Longitude for Stop: (enter 0 to keep current coordinates)");
+		if(lat != 0 && lon != 0){
+			choice.setLatitude(lat);
+			choice.setLongitude(lon);
+		}
+		getSystem().spotLocation(choice, "Edited: " + choice.getName(), this);
 	}
 	
 	public void removeStation(){

@@ -19,6 +19,12 @@ public class CTAStop extends Location{
 		this.routes = new ArrayList<RouteType>();
 	}
 	
+	public CTAStop(String name, Double lat, Double lon, RouteType type){
+		super(name, lat, lon);
+		this.routes = new ArrayList<RouteType>();
+		this.routes.add(type);
+	}
+	
 	public CTAStop(String line){
 		super(line, 2, 16);
 		String[] data = line.split("\\|");
