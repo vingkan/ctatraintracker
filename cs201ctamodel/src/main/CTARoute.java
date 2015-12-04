@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -38,6 +39,14 @@ public class CTARoute {
 
 	public void setType(RouteType type) {
 		this.type = type;
+	}
+	
+	public String getName(){
+		return this.type.getName();
+	}
+	
+	public Color getColor(){
+		return this.type.getColor();
 	}
 
 	public List<CTAStop> getPath() {

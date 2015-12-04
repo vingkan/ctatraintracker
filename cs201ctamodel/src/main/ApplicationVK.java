@@ -32,7 +32,7 @@ public class ApplicationVK {
 		greenIIT.getPath().add(cta.getStopByID(30381));
 		System.out.println(greenIIT);
 		
-		cta.updateMapPoints();
+		cta.drawMapPoints();
 		cta.displayMap();
 		
 	}

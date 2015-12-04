@@ -16,10 +16,12 @@ import eu.jacquet80.minigeo.Segment;
 public class CTASystem {
 	
 	private List<CTAStop> stops;
+	private List<CTARoute> routes;
 	private MapWindow map;
 	
 	public CTASystem(){
 		this.stops = new ArrayList<CTAStop>();
+		this.routes = new ArrayList<CTARoute>();
 		this.map = CTASystem.getMapWindowFromFile("chicago.poly.txt");
 	}
 	
@@ -88,10 +90,23 @@ public class CTASystem {
 		this.map.setVisible(true);
 	}
 
-	public void updateMapPoints(){
+	public void drawMapPoints(){
 		//this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
 		for(CTAStop stop : this.stops){
 			this.map.addPOI(new POI(stop.getPoint(), ""));
+		}
+	}
+	
+	public void drawMapRoutes(){
+		for(CTARoute route : this.routes){
+			List<CTAStop> stops = route.getPath();
+			Point previous = stops.get(0).getPoint();
+			Point cursor = null;
+			for(int s = 1; s < stops.size(); s++){
+				cursor = stops.get(s).getPoint();
+				map.addSegment(new Segment(previous, cursor, route.getColor()));
+				previous = cursor;
+			}
 		}
 	}
 	
@@ -113,6 +128,18 @@ public class CTASystem {
 	
 	public void addStop(CTAStop stop){
 		this.stops.add(stop);
+	}
+
+	public List<CTARoute> getRoutes() {
+		return routes;
+	}
+
+	public void setRoutes(List<CTARoute> routes) {
+		this.routes = routes;
+	}
+	
+	public void addRoute(CTARoute route){
+		this.routes.add(route);
 	}
 
 }
