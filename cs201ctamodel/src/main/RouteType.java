@@ -4,6 +4,7 @@ import java.awt.Color;
 
 public enum RouteType {
 	
+	CUSTOM ("Custom Route", Color.GRAY),
 	GREEN_LINE ("Green Line", Color.GREEN),
 	RED_LINE ("Red Line", Color.RED),
 	BLUE_LINE ("Blue Line", Color.BLUE),

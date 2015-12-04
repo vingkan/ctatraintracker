@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,8 +63,8 @@ public class CTAStop extends Location{
 
 	@Override
 	public Point getPoint(){
-		Color color = this.routes.get(0).getColor();
-		Point point = new Point(this.getLatitude(), this.getLongitude(), color);
+		//Color color = this.routes.get(0).getColor();
+		Point point = new Point(this.getLatitude(), this.getLongitude());
 		return point;
 	}
 	
