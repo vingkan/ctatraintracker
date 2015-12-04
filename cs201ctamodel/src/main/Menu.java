@@ -66,6 +66,8 @@ public abstract class Menu {
 			selectOption(choice);
 		}
 		catch(Exception e){
+			System.out.println(e);
+			System.out.println("Wrong: " + choice);
 			exitProgram();
 		}
 	}
@@ -146,11 +148,13 @@ public abstract class Menu {
 	 */
 	public void tripPlanner(){
 		CTAStop end = searchForStop("Choose a destination stop.");
+		System.out.println("desintation");
 		LocationComparator locationComparator = new LocationComparator(end);
 		Collections.sort(system.getStops(), locationComparator);
 		CTAStop start = searchForStop("Choose your starting stop.");
 		system.spotLocation(start, "Start: " + start.getName(), this);
 		system.spotConcurrentLocation(end, "End: " + end.getName(), this);
+		System.out.println("finish method");
 	}
 	
 	/*
