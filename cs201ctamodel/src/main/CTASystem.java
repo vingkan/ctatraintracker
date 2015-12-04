@@ -101,6 +101,15 @@ public class CTASystem {
 		this.routes.add(new CTARoute(train, type, this, stopIDs));
 	}
 	
+	public void addRoute(String line){
+		String[] data = line.split(",");
+		int[] stopIDs = new int[data.length-2];
+		for(int d = 0; d < data.length-2; d++){
+			stopIDs[d] = Integer.parseInt(data[d+2]);
+		}
+		this.addRoute(data[0], RouteType.getTypeByName(data[1]), stopIDs);
+	}
+	
 	public MapWindow getMap() {
 		return map;
 	}
