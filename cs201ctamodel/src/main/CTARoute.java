@@ -17,6 +17,19 @@ public class CTARoute {
 		this.type = type;
 		this.path = new LinkedList<CTAStop>();
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		String response = "CTA Route: " + this.type.getName() + "\n";
+		response += "---------------------------------" + "\n";
+		for(CTAStop stop : path){
+			response += stop.toString();
+		}
+		response += "\n" + "---------------------------------";
+		return response;
+	}
 
 	public RouteType getType() {
 		return type;
