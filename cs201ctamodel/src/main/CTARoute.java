@@ -47,14 +47,16 @@ public class CTARoute {
 
 	@Override
 	public String toString() {
-		String response = "CTA Route: " + this.type.getName() + "\n";
+		return this.getName() + ": " + this.getTrain();
+		//Long toString() for Console Viewing:
+		/*String response = "CTA Route: " + this.type.getName() + "\n";
 		response += "---------------------------------" + "\n";
 		for(int s = 0; s < this.path.size(); s++){
 			CTAStop stop = this.path.get(s);
 			response += s + ". " + stop.toString() + "\n";
 		}
 		response += "---------------------------------";
-		return response;
+		return response;*/
 	}
 
 	public String getTrain() {

@@ -1,5 +1,7 @@
 package main;
 
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public abstract class Menu {
@@ -34,6 +36,7 @@ public abstract class Menu {
 	}
 	
 	public void displayOptions(){
+		System.out.println("opening menu");
 		String choice = (String)JOptionPane.showInputDialog(
 			null, this.toString(),
 			null, JOptionPane.PLAIN_MESSAGE,
@@ -68,9 +71,35 @@ public abstract class Menu {
 		return choice;
 	}
 	
+	public CTAStop searchForStop(List<CTAStop> list){
+		int size = list.size();
+		CTAStop[] stopsList = new CTAStop[size];
+		for(int i = 0; i < size; i++){
+			stopsList[i] = list.get(i);
+		}
+		CTAStop choice = (CTAStop)JOptionPane.showInputDialog(
+			null, "CTA Stops",
+			null, JOptionPane.PLAIN_MESSAGE,
+			null, stopsList, stopsList[0]);
+		return choice;
+	}
+	
+	public CTARoute searchForRoute(){
+		int size = system.getRoutes().size();
+		CTARoute[] routesList = new CTARoute[size];
+		for(int i = 0; i < size; i++){
+			routesList[i] = system.getRoutes().get(i);
+		}
+		CTARoute choice = (CTARoute)JOptionPane.showInputDialog(
+			null, "CTA Routes",
+			null, JOptionPane.PLAIN_MESSAGE,
+			null, routesList, routesList[0]);
+		return choice;
+	}
+	
 	public void findStation(){
 		CTAStop choice = searchForStop();
-		system.spotLocation(choice, this);
+		system.spotLocation(choice, "Found: " + choice.getName(), this);
 	}
 	
 	public void tripPlanner(){

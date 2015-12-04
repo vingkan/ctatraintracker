@@ -1,5 +1,7 @@
 package main;
 
+import javax.swing.JOptionPane;
+
 public class AdminMenu extends Menu {
 	
 	public AdminMenu(CTASystem system){
@@ -41,7 +43,28 @@ public class AdminMenu extends Menu {
 	}
 	
 	public void addStation(){
+		JOptionPane.showMessageDialog(null, "Choose the route to edit.");
+		CTARoute editRoute = searchForRoute();
 		
+		CTAStop newStop = new CTAStop();
+		newStop.setLatitude(41.995483);
+		newStop.setLongitude(-87.9381691);
+		newStop.setName("Hello World Station");
+		//newStop.setRoutes(new ArrayList<RouteType>());
+		getSystem().addStop(newStop);
+		String[] decisionOptions = {"Before", "After"};
+		String decision = Converter.getAcceptableStrings("Would you like the new stop to go before or after an existing stop?", decisionOptions, false);
+		JOptionPane.showMessageDialog(null, "Next you will pick the station the new stop should go " + decision + ".");
+		CTAStop referenceStation = searchForStop(editRoute.getPath());
+		if(decision.toLowerCase().equals("after")){
+			editRoute.getPath().add(editRoute.getPath().indexOf(referenceStation), newStop);
+			//JOptionPane.showMessageDialog(null, "New Stop Added.");
+		}
+		else if(decision.toLowerCase().equals("before")){
+			editRoute.getPath().add(editRoute.getPath().indexOf(referenceStation)+1, newStop);
+			//JOptionPane.showMessageDialog(null, "New Stop Added.");
+		}
+		getSystem().spotLocation(newStop, "Added: " + newStop.getName(), this);
 	}
 	
 	public void editStation(){
@@ -49,7 +72,10 @@ public class AdminMenu extends Menu {
 	}
 	
 	public void removeStation(){
-		
+		CTAStop target = searchForStop();
+		getSystem().removeStop(target.getID());
+		getSystem().spotLocation(target, "Removed: " + target.getName(), this);
+		System.out.println("finish remove station call");
 	}
 	
 }

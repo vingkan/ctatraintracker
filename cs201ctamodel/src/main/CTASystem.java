@@ -54,7 +54,9 @@ public class CTASystem {
 		}
 		catch(Exception e){
 			System.out.println("Encountered Exception: " + e);
-		}	
+		}
+		drawMapPoints();
+		drawMapRoutes();
 	}
 	
 	public CTAStop getStopByID(int idQuery){
@@ -85,18 +87,11 @@ public class CTASystem {
 		this.stops = stops;
 	}
 	
-	public void addStop(CTAStop stop, boolean refresh){
-		this.stops.add(stop);
-		if(refresh){
-			this.refreshMap();
-		}
-	}
-	
 	public void addStop(CTAStop stop){
-		this.addStop(stop, false);
+		this.stops.add(stop);
 	}
 	
-	public void removeStop(int stopID, boolean refresh){
+	public void removeStop(int stopID){
 		CTAStop target = this.getStopByID(stopID);
 		for(CTARoute route : this.routes){
 			int index = route.containsStop(target);
@@ -106,13 +101,6 @@ public class CTASystem {
 		}
 		this.stops.remove(target);
 		System.out.println("Removed: " + target);
-		if(refresh){
-			this.refreshMap();
-		}
-	}
-	
-	public void removeStop(int stopID){
-		removeStop(stopID, false);
 	}
 
 	public List<CTARoute> getRoutes() {
@@ -152,13 +140,11 @@ public class CTASystem {
 		this.map.setVisible(visible);
 	}
 	
-	public void refreshMap(){
-		System.out.println("Refresh");
-		toggleMap(false);
+	public void updateMap(){
 		this.map = getMapWindowFromFile(CHICAGO_BOUNDS);
 		drawMapPoints();
 		drawMapRoutes();
-		toggleMap(true);
+		System.out.println("updated map");
 	}
 	
 	/*
@@ -223,20 +209,25 @@ public class CTASystem {
 	}
 	
 	public void setMenuCallback(Menu menu){
+		updateMap();
+		System.out.println(menu);
 		this.map.addWindowListener(new WindowAdapter(){
 			@Override
 			public void windowClosing(WindowEvent e){
-				e.getWindow().dispose();
+				System.out.println("217" + menu);
+				System.out.println("displayable: " + e.getWindow().isDisplayable());
 				menu.displayOptions();
+				System.out.println("220visible: " + map.isVisible());
 			}
 		});
 	}
 	
-	public void spotLocation(Location location, Menu menu){
-		refreshMap();
-		this.map.addPOI(new POI(location.getPoint(), location.getName()));
+	public void spotLocation(Location location, String label, Menu menu){
 		setMenuCallback(menu);
-		toggleMap(true);
+		this.map.addPOI(new POI(location.getPoint(), label));
+		System.out.println("227 visible: " + this.map.isVisible());
+		this.map.setVisible(true);
+		System.out.println("Spot Location Opened Map");
 	}
 
 }

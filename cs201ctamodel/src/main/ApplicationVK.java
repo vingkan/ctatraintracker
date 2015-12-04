@@ -20,7 +20,7 @@ public class ApplicationVK {
 			menu = new AdminMenu(cta);
 		}
 		else{*/
-			menu = new VisitorMenu(cta);
+			menu = new AdminMenu(cta);
 		//}
 		menu.displayOptions();
 		
