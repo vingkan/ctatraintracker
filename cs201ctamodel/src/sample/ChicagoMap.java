@@ -35,6 +35,7 @@ public class ChicagoMap {
                 prec = cur;
             } else errCount++;
         }
+        r.close();
         
         window.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
         //window.
@@ -42,6 +43,7 @@ public class ChicagoMap {
         System.out.println("Read " + readCount + " lines; ignored " + errCount);
         
         window.setVisible(true);
+        
     }
 
 }
