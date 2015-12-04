@@ -6,5 +6,24 @@
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/google-api-services-mapsengine-v1-rev64-java-1.21.0/mapsengine/google-api-services-mapsengine-v1-rev64-1.21.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/google-api-services-mapsengine-v1-rev64-java-1.21.0/mapsengine/google-api-services-mapsengine-v1-rev64-1.21.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Documents/GitHub/ctatraintracker/cs201ctamodel/unfolding.0.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Documents/GitHub/ctatraintracker/cs201ctamodel/core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/gluegen-rt-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/jogl-all-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/json4processing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/libTUIO.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vinesh Kannan/Downloads/unfolding_app_template_0.9.6/lib/sqlite-jdbc-3.7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
