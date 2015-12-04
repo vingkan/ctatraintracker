@@ -1,7 +1,10 @@
 package main;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+
+import eu.jacquet80.minigeo.Point;
 
 public class CTAStop extends Location{
 
@@ -53,12 +56,19 @@ public class CTAStop extends Location{
 		String response = "CTA Stop " + this.id + "\n";
 		response += super.toString() + "\n";
 		response += "Station " + this.stationID + " Serves Lines:";
-		for(String line : this.routes){
-			response += "\n - " + line;
+		for(RouteType line : this.routes){
+			response += "\n - " + line.getName();
 		}
 		return response;	
 	}
 
+	@Override
+	public Point getPoint(){
+		Color color = this.routes.get(0).getColor();
+		Point point = new Point(this.getLatitude(), this.getLongitude(), color);
+		return point;
+	}
+	
 	public int getID() {
 		return id;
 	}
