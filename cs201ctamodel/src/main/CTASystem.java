@@ -44,6 +44,46 @@ public class CTASystem {
 		}
 		return response;
 	}
+
+	public List<CTAStop> getStops() {
+		return stops;
+	}
+
+	public void setStops(List<CTAStop> stops) {
+		this.stops = stops;
+	}
+	
+	public void addStop(CTAStop stop){
+		this.stops.add(stop);
+	}
+
+	public List<CTARoute> getRoutes() {
+		return routes;
+	}
+
+	public void setRoutes(List<CTARoute> routes) {
+		this.routes = routes;
+	}
+	
+	public void addRoute(CTARoute route){
+		this.routes.add(route);
+	}
+	
+	public void addRoute(String train, RouteType type, int[] stopIDs){
+		this.routes.add(new CTARoute(train, type, this, stopIDs));
+	}
+	
+	public MapWindow getMap() {
+		return map;
+	}
+
+	public void setMap(MapWindow map) {
+		this.map = map;
+	}
+	
+	public void toggleMap(boolean visible){
+		this.map.setVisible(visible);
+	}
 	
 	/*
 	 * Creates MapWindow with outline of the City of Chicago from the .poly file
@@ -86,10 +126,6 @@ public class CTASystem {
 		return map;
 	}
 	
-	public void displayMap(){
-		this.map.setVisible(true);
-	}
-
 	public void drawMapPoints(){
 		//this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
 		for(CTAStop stop : this.stops){
@@ -108,42 +144,6 @@ public class CTASystem {
 				previous = cursor;
 			}
 		}
-	}
-	
-	public MapWindow getMap() {
-		return map;
-	}
-
-	public void setMap(MapWindow map) {
-		this.map = map;
-	}
-
-	public List<CTAStop> getStops() {
-		return stops;
-	}
-
-	public void setStops(List<CTAStop> stops) {
-		this.stops = stops;
-	}
-	
-	public void addStop(CTAStop stop){
-		this.stops.add(stop);
-	}
-
-	public List<CTARoute> getRoutes() {
-		return routes;
-	}
-
-	public void setRoutes(List<CTARoute> routes) {
-		this.routes = routes;
-	}
-	
-	public void addRoute(CTARoute route){
-		this.routes.add(route);
-	}
-	
-	public void addRoute(String train, RouteType type, int[] stopIDs){
-		this.routes.add(new CTARoute(train, type, this, stopIDs));
 	}
 
 }

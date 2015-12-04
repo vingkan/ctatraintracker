@@ -14,7 +14,6 @@ public class ApplicationVK {
 			Scanner scan = new Scanner(file);
 			while(scan.hasNextLine()){
 				String line = scan.nextLine();
-				//System.out.println(line);
 				cta.addStop(new CTAStop(line));
 			}
 			scan.close();
@@ -27,6 +26,7 @@ public class ApplicationVK {
 			System.out.println(stop + "\n");
 		}*/
 		
+		//These are all the mappings I will add for now.
 		cta.addRoute("Ashland/63rd", RouteType.GREEN_LINE, new int[]{30004, 30263, 30119, 30243, 30054, 30135, 30094, 30005, 30291, 30207, 30265, 30033, 30295, 30221, 30074, 30050, 30039, 30132, 30081, 30382, 30214, 30059, 30246, 30210, 30025, 30100, 30184, 30057});
 		cta.addRoute("Cottage Grove", RouteType.GREEN_LINE, new int[]{30004, 30263, 30119, 30243, 30054, 30135, 30094, 30005, 30291, 30207, 30265, 30033, 30295, 30221, 30074, 30050, 30039, 30132, 30081, 30382, 30214, 30059, 30246, 30210, 30025, 30100, 30217, 30139});
 		cta.addRoute("95th/Dan Ryan", RouteType.RED_LINE, new int[]{30173, 30228, 30021, 30252, 30148, 30170, 30268, 30067, 30230, 30150, 30106, 30017, 30274, 30256, 30234, 30126, 30122, 30280, 30065, 30290, 30212, 30110, 30286, 30270, 30194, 30037, 30238, 30224, 30178, 30192, 30047, 30276, 30089});
@@ -35,7 +35,7 @@ public class ApplicationVK {
 		
 		cta.drawMapPoints();
 		cta.drawMapRoutes();
-		cta.displayMap();
+		cta.toggleMap(true);
 		
 	}
 
