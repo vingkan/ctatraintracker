@@ -30,6 +30,7 @@ public class ApplicationVK {
 		CTARoute greenIIT = new CTARoute(RouteType.GREEN_LINE);
 		greenIIT.getPath().add(cta.getStopByID(30213));
 		greenIIT.getPath().add(cta.getStopByID(30381));
+		greenIIT.getPath().add(cta.getStopByID(30080));
 		System.out.println(greenIIT);
 		
 		cta.addRoute(greenIIT);
