@@ -70,7 +70,7 @@ public class AdminMenu extends Menu {
 	}
 	
 	public void editStation(){
-		CTAStop choice = searchForStop();
+		CTAStop choice = searchForStop("Choose a stop to edit.");
 		String name = JOptionPane.showInputDialog(null, "Change Stop Name:", choice.getName());
 		choice.setName(name);
 		double lat = Converter.getUserDouble("New Latitude for Stop: (enter 0 to keep current coordinates)");
@@ -83,7 +83,7 @@ public class AdminMenu extends Menu {
 	}
 	
 	public void removeStation(){
-		CTAStop target = searchForStop();
+		CTAStop target = searchForStop("Choose a stop to remove.");
 		getSystem().removeStop(target.getID());
 		getSystem().spotLocation(target, "Removed: " + target.getName(), this);
 		System.out.println("finish remove station call");

@@ -3,7 +3,11 @@ package main;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+
+import ca.odell.glazedlists.GlazedLists;
+import ca.odell.glazedlists.swing.AutoCompleteSupport;
 
 public abstract class Menu {
 
@@ -59,14 +63,16 @@ public abstract class Menu {
 		//To be implemented by child class.
 	}
 	
-	public CTAStop searchForStop(){
+	public CTAStop searchForStop(String prompt){
+		LocationComparator nameComparator = new LocationComparator("ALPHABETICAL");
+		Collections.sort(system.getStops(), nameComparator);
 		int size = system.getStops().size();
 		CTAStop[] stopsList = new CTAStop[size];
 		for(int i = 0; i < size; i++){
 			stopsList[i] = system.getStops().get(i);
-		}
+		} 
 		CTAStop choice = (CTAStop)JOptionPane.showInputDialog(
-			null, "CTA Stops",
+			null, prompt,
 			null, JOptionPane.PLAIN_MESSAGE,
 			null, stopsList, stopsList[0]);
 		return choice;
@@ -99,15 +105,15 @@ public abstract class Menu {
 	}
 	
 	public void findStation(){
-		CTAStop choice = searchForStop();
+		CTAStop choice = searchForStop("Select a stop.");
 		system.spotLocation(choice, "Found: " + choice.getName(), this);
 	}
 	
 	public void tripPlanner(){
-		CTAStop end = searchForStop();
+		CTAStop end = searchForStop("Choose a destination stop.");
 		LocationComparator locationComparator = new LocationComparator(end);
 		Collections.sort(system.getStops(), locationComparator);
-		CTAStop start = searchForStop();
+		CTAStop start = searchForStop("Choose your starting stop.");
 		system.spotLocation(start, "Start: " + start.getName(), this);
 		system.spotConcurrentLocation(end, "End: " + end.getName(), this);
 	}
