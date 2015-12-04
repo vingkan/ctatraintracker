@@ -33,6 +33,10 @@ public class CTASystem {
 		return response;
 	}
 	
+	/*
+	 * Creates MapWindow with outline of the City of Chicago from the .poly file
+	 * Based on: https://code.google.com/p/minigeo/source/browse/trunk/MiniGeo/src/MinigeoDemo.java
+	 */
 	private static String pattern = "^.*?(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)$";
 	private static Pattern POINT = Pattern.compile(pattern);
 	
@@ -75,8 +79,6 @@ public class CTASystem {
 	public void updateMapPoints(){
 		//this.map.addPOI(new POI(new Point(41.9869192, -87.9398331), "Chicago"));
 		for(CTAStop stop : this.stops){
-			System.out.println(stop.getLatitude());
-			System.out.println(stop.getLongitude());
 			this.map.addPOI(new POI(stop.getPoint(), ""));
 		}
 	}
